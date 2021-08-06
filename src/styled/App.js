@@ -90,7 +90,7 @@ export const MoveButton = styled.div`
 
 export const SignUp = styled.strong`
     position: relative;
-    margin: 5px;
+    left: 5px;
     top: 5px;
 `
 
@@ -193,7 +193,6 @@ export const Text = styled.div`
 export const NextDiv = styled.div`
     display: flex;
     position: relative;
-    left: 650px;
     height: 30px;
 `
 
@@ -231,7 +230,7 @@ export const TPage = styled.p`
 export const Page = styled.p`
     position: relative;
     top: 0px;
-    left: 160px;
+    left: 580px;
     font-size: 20px;
     margin: 0;
     border: 0;

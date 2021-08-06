@@ -67,7 +67,7 @@ const Login = () => {
                 <>
                 <S.LoginInput onChange={(e) => setId(e.target.value)} value={id}></S.LoginInput>
                 <S.LoginInput type="password" onChange={(e) => setPassword(e.target.value)} value={password}></S.LoginInput>
-                <S.Button left="5px" width="60px" onClick={onLogin}>로그인</S.Button>
+                <S.Button left="5px" width="60px" top="0px" onClick={onLogin}>로그인</S.Button>
                 </>
             }
             </S.LoginInputGroup>
