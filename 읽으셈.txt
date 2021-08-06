@@ -1,0 +1,9 @@
+리액트 실행 법
+
+1. 비주얼 스튜디오 코드 다운
+https://code.visualstudio.com/
+
+2. 노드 js 다운
+https://nodejs.org/ko/
+
+3. 비주얼 스튜디오 코드로 notice 폴더를 연후 터미널에서 cd client 그리고 npm start 를 입력 한다. 
