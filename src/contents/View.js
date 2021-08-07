@@ -9,7 +9,7 @@ const View = ({item}) => {
     return(
         <>
             <S.box onClick={() => history.push("/View/"+item.id)}>
-                <p>{item.tittle}</p>
+                <S.Number>{item.id}</S.Number><p>{item.tittle}</p>
             </S.box>
         </>
     );

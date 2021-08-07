@@ -1,4 +1,4 @@
-import React,{useState, useRef} from 'react'
+import React,{useState, useRef, useLayoutEffect} from 'react'
 import * as S from '../styled/App'
 import Comments from '../contents/Comments'
 import Axios from 'axios'
@@ -26,74 +26,59 @@ const ViewPage = () => {
         },
         {
             id: 4,
-            nickname: 'test1',
-            comment: 'test1',
+            nickname: 'test4',
+            comment: 'test4',
         },
         {
             id: 5,
-            nickname: 'test1',
-            comment: 'test1',
+            nickname: 'test5',
+            comment: 'test5',
         },
 
         {
             id: 6,
-            nickname: 'test1',
+            nickname: 'test6',
             comment: 'test1',
         },
         {
             id: 7,
-            nickname: 'test1',
+            nickname: 'test7',
             comment: 'test1',
         },
         {
             id: 8,
-            nickname: 'test1',
+            nickname: 'test8',
             comment: 'test1',
         },
         {
             id: 9,
-            nickname: 'test1',
+            nickname: 'test9',
             comment: 'test1',
         },
         {
             id: 10,
-            nickname: 'test1',
+            nickname: 'test10',
             comment: 'test1',
         },
         {
             id: 11,
-            nickname: 'test1',
+            nickname: 'test11',
             comment: 'test1',
         },
         {
             id: 12,
-            nickname: 'test1',
+            nickname: 'test12',
             comment: 'test1',
         },
-        {
-            id: 13,
-            nickname: 'test1',
-            comment: 'test1',
-        },
-        {
-            id: 14,
-            nickname: 'test1',
-            comment: 'test1',
-        },
-        {
-            id: 15,
-            nickname: 'test1',
-            comment: 'test1',
-        },
-
     ])
 
-    const [slists, setSlists] = useState(lists.filter(lists => lists.id >= 1 && lists.id <= 10));
+    const [slists, setSlists] = useState(setComment());
 
     //다음 댓글 목록 으로 이동
     const nextComment = () => {
         if(page < Math.ceil(lists.length / 10)){
-            setPage(page + 1);
+            setPage(page+1);
+            console.log(page);
             setComment();
         }
     }
@@ -101,38 +86,40 @@ const ViewPage = () => {
     //이전 댓글 목록으로 이동
     const prevComment = () => {
         if(page > 1){
-            setPage(page - 1);
+            setPage(page-1);
+            console.log(page);
             setComment();
         }
     }
 
     //오류 있음
-    const setComment = () => {
-        var list = lists.division(10);
-        setSlists(list[page]);
-    }
+    const setComment = () => {   
+        
+        const ulists = lists.reverse();
 
-    Array.prototype.division = function(n) {
-        var arr = this;
-        var len = arr.length;
-        var cnt = Math.floor(len / n) + (Math.floor(len % n) > 0 ? 1 : 0);
-        var tmp = [];
+        console.log(ulists);
 
-        for(var i = 0; i < cnt; i++){
-            tmp.push(arr.slice(0, n));
+        if(page === 1){
+            setSlists(ulists.slice(0, 10));
         }
+        else{
+            setSlists(ulists.slice(10*(page-1)+1, 10*(page-1)+11));
+        }    
 
-        return tmp;
+        console.log(slists);
     }
 
     return(
-        <>
+        <div>
+            <div>
             <S.MiddleTittle>제목</S.MiddleTittle>
             <S.Text>
                 <div style={{height:"50px"}}></div>
                 <b style={{fontSize: "18px", margin: "10px"}}></b>             
             </S.Text>
+            </div>
             <S.Chat>댓글</S.Chat>
+            <div>
             <S.CommentsBorder>
                 <Comments 
                     lists={slists}
@@ -140,14 +127,15 @@ const ViewPage = () => {
             </S.CommentsBorder>
             <S.TNextDiv>
                 <S.TPage>{page}/{Math.ceil(lists.length / 10)}</S.TPage>
-                <S.Button width="30px" height="30px" left="86.1%" top="-30px" onClick={prevComment}>◀</S.Button>
-                <S.Button width="30px" height="30px" left="86.1%" top="-30px" onClick={nextComment}>▶</S.Button>
+                <S.Button width="30px" height="30px" left="1300px" top="-30px" onClick={prevComment}>◀</S.Button>
+                <S.Button width="30px" height="30px" left="1300px" top="-30px" onClick={nextComment}>▶</S.Button>
             </S.TNextDiv>
+            </div>
             <S.RegistCommentDiv>
                 <S.RegistCommentTextArea />
                 <S.Button right="10px" top="62px">댓글 달기</S.Button>
             </S.RegistCommentDiv>
-        </>
+        </div>
     );
 }
 

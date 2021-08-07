@@ -17,6 +17,7 @@ export const Post = styled.div`
     display: flex;
 `
 export const Border = styled.ul`
+    margin-top: 0;
     position: relative;
     width: 750px;
     height: 700px;
@@ -32,7 +33,7 @@ export const SmallTittle = styled.h3`
     left: 15%;
     padding: 0;
     margin: 0;
-    margin-top: 50px;
+    margin-top: 100px;
     color: #008080;
 `
 export const Button = styled.button`
@@ -78,6 +79,9 @@ export const box = styled.li`
     margin: 0;
     border: 0;
     border-bottom: 1px solid gray;
+    height: 50px;
+    display: flex;
+    flex-direction: center;
 `
 
 export const MoveButton = styled.div`
@@ -178,11 +182,11 @@ export const CheckInput = styled.input`
 export const MiddleTittle = styled.h1`
     color: #008080;
     position: relative;
-    left: 10%;
+    left: 160px;
 `
 
 export const Text = styled.div`
-    width: 80%;
+    width: 1200px;
     height: 700px;
     position: relative;
     left: 50%;
@@ -203,7 +207,7 @@ export const CommentsBorder = styled.ul`
     border-top: 2px solid #008080;
     border-bottom: 2px solid #008080;
     height: 544px;
-    width: 80%;
+    width: 1200px;
     list-style:none;
     margin: 0;
     padding: 0;
@@ -240,7 +244,7 @@ export const RegistCommentDiv = styled.div`
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    width: 80%;
+    width: 1200px;
     border-top: 2px solid #008080;
     border-bottom: 2px solid #008080;
     height: 300px;
@@ -258,7 +262,7 @@ export const RegistCommentTextArea = styled.textarea`
 
 export const Chat = styled.h3`
     position: relative;
-    left: 9.5%;
+    left: 150px;
     padding: 0;
     margin: 10px;
     color: #008080;
@@ -270,4 +274,26 @@ export const TNextDiv = styled.div`
 
 export const Footer = styled.div`
     height: 100px;
+`
+
+export const Number = styled.p`
+    margin-left: 20px;
+    margin-right: 50px;
+`
+
+export const Bheader = styled.div`
+    margin-top: 10px;
+    border-top: 2px solid #008080;
+    width: 750px;
+    height: 30px;
+    display: flex;
+    align-content: center;
+    background-color: whitesmoke;
+`
+export const Category = styled.p`
+    position: relative;
+    height: 30px;
+    margin: 0px;
+    top: 5px;
+    left: ${props => props.left};
 `

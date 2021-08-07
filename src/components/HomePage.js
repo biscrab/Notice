@@ -50,6 +50,7 @@ const HomePage = () =>{
     const setList = () => {
         const list = lists.division(10);
         setSlists(list[page]);
+        console.log(slists);
     }
     
     Array.prototype.division = function(n) {
@@ -69,7 +70,12 @@ const HomePage = () =>{
         <>  
             <S.SmallTittle>게시판</S.SmallTittle>
             <S.Post>
-                <div>
+                <div>                
+                    <S.Bheader>
+                        <S.Category left="10px">번호</S.Category>
+                        <S.Category left="280px">제목</S.Category>
+                        <S.Category left="550px">작성자</S.Category>
+                    </S.Bheader>
                     <S.Border>
                         <View 
                             lists = {lists}

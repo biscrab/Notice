@@ -4,7 +4,7 @@ import * as S from '../styled/App'
 const Comments = ({item}) => {
     return(
         <S.Comment>
-            <S.Name>{item.id}{item.nickname}</S.Name><p>{item.comment}</p>
+            <S.Name>{item.nickname}</S.Name><p>{item.comment}</p>
         </S.Comment>
     );
 }
