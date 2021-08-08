@@ -14,7 +14,12 @@ export const Post = styled.div`
     position: relative;
     left: 15%;
     margin: 0px;
+    margin-right: 0px;
     display: flex;
+    @media (max-width: 600px){
+        left: 0%;
+        width: 100%;
+    }
 `
 export const Border = styled.ul`
     margin-top: 0;
@@ -28,6 +33,9 @@ export const Border = styled.ul`
     list-style:none;
     margin-bottom: 0;
     overflow-y: auto;
+    @media (max-width: 600px){
+        width: 100%;
+    }
 `
 export const SmallTittle = styled.h3`
     position: absolute;
@@ -55,9 +63,14 @@ export const LoginBorder = styled.div`
     height: 148px;
     border: 3px solid #008080;
     margin: 0px;
-    margin-top: 130px;
+    top: 130px;
+    left: 65%;
     position: relative;
     margin-left: 50px;
+    @media (max-width: 600px){
+        top: 950px;
+        right: 67%;
+    }
 `
 
 export const LoginInput = styled.input`
@@ -292,18 +305,25 @@ export const Bheader = styled.div`
     display: flex;
     align-content: center;
     background-color: whitesmoke;
+    @media (max-width: 600px){
+        width: 100%;
+    }
 `
-export const Category = styled.p`
+export const CNumber = styled.p`
     position: relative;
     height: 30px;
     margin: 0px;
     top: 5px;
-    left: ${props => props.left};
+    left: 1%;
 `
 
 export const Author = styled.p`
     position: absolute;
     left: 620px;
+
+    @media (max-width: 600px){
+        left: 80%;
+    }
 `
 
 export const Total = styled.p`
@@ -312,6 +332,9 @@ export const Total = styled.p`
     left: 75%;
     margin: 0px;
     width: 190px;
+    @media (max-width: 600px){
+        left: 45%;
+    }
 `
 
 export const VTittle = styled.p`
@@ -321,4 +344,36 @@ export const VTittle = styled.p`
 
 export const HBorder = styled.div`
     margin-top: 100px;
+    @media (max-width: 600px){
+        margin-top: 50px;
+    }
+
+`
+
+export const TBorder = styled.div`
+    @media (max-width: 600px){
+        width: 100%;
+    }
+`   
+
+export const CTittle = styled.p`
+    position: relative;
+    height: 30px;
+    margin: 0px;
+    top: 5px;
+    left: 37%;
+    @media (max-width: 600px){
+        left: 30%;
+    }
+`
+
+export const CAuthor = styled.p`
+    position: relative;
+    height: 30px;
+    margin: 0px;
+    top: 5px;
+    left: 74%;
+    @media (max-width: 600px){
+        left: 62.5%;
+    }
 `

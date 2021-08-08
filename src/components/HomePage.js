@@ -126,28 +126,29 @@ const HomePage = () =>{
     })
 
     return( 
+        <>
         <S.Post>
-            <div>
+            <S.TBorder>
                 <S.HBorder>
                     <S.SmallTittle>게시판</S.SmallTittle> 
                     <S.Total>총 {lists.length}개의 글이 있습니다.</S.Total>                 
                 </S.HBorder>
                 <S.Bheader>
-                    <S.Category left="10px">번호</S.Category>
-                    <S.Category left="280px">제목</S.Category>
-                    <S.Category left="550px">작성자</S.Category>
+                    <S.CNumber>번호</S.CNumber>
+                    <S.CTittle>제목</S.CTittle>
+                    <S.CAuthor>작성자</S.CAuthor>
                 </S.Bheader>
-                    <S.Border>
-                        <View
-                            lists = {slists}
-                        />
+                <S.Border>
+                    <View
+                        lists = {slists}
+                    />
                 </S.Border>            
             <S.NextDiv>
                 <S.Button height="30px" width="70px" onClick={onWriting}>글쓰기</S.Button>
                 </S.NextDiv>   
-            </div>
-            <Login></Login>
+            </S.TBorder>
         </S.Post>
+        </>
     )
 }
 
