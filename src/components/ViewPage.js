@@ -72,7 +72,7 @@ const ViewPage = () => {
         },
     ])
 
-    const [slists, setSlists] = useState(setComment());
+    const [slists, setSlists] = useState([...lists]);
 
     //다음 댓글 목록 으로 이동
     const nextComment = () => {

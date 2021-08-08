@@ -20,7 +20,7 @@ export const Border = styled.ul`
     margin-top: 0;
     position: relative;
     width: 750px;
-    height: 700px;
+    height: 712px;
     border-top:	#008080 solid 2px;
     border-bottom: #008080 solid 2px;
     background-color: white;
@@ -29,11 +29,10 @@ export const Border = styled.ul`
     margin-bottom: 0;
 `
 export const SmallTittle = styled.h3`
-    position: relative;
-    left: 15%;
+    position: absolute;
     padding: 0;
     margin: 0;
-    margin-top: 100px;
+    width: 60px;
     color: #008080;
 `
 export const Button = styled.button`
@@ -55,6 +54,7 @@ export const LoginBorder = styled.div`
     height: 148px;
     border: 3px solid #008080;
     margin: 0px;
+    margin-top: 130px;
     position: relative;
     margin-left: 50px;
 `
@@ -277,8 +277,8 @@ export const Footer = styled.div`
 `
 
 export const Number = styled.p`
-    margin-left: 20px;
-    margin-right: 50px;
+    position: absolute;
+    left: 15px;
 `
 
 export const Bheader = styled.div`
@@ -296,4 +296,26 @@ export const Category = styled.p`
     margin: 0px;
     top: 5px;
     left: ${props => props.left};
+`
+
+export const Author = styled.p`
+    position: absolute;
+    left: 620px;
+`
+
+export const Total = styled.p`
+    position: relative;
+    color: #008080;
+    left: 75%;
+    margin: 0px;
+    width: 190px;
+`
+
+export const VTittle = styled.p`
+    position: absolute;
+    left: 50px;
+`
+
+export const HBorder = styled.div`
+    margin-top: 100px;
 `

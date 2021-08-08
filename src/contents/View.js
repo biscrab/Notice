@@ -9,7 +9,7 @@ const View = ({item}) => {
     return(
         <>
             <S.box onClick={() => history.push("/View/"+item.id)}>
-                <S.Number>{item.id}</S.Number><p>{item.tittle}</p>
+                <S.Number>{item.id}</S.Number><S.VTittle>{item.tittle}</S.VTittle><S.Author>{item.author}</S.Author>
             </S.box>
         </>
     );
@@ -18,7 +18,7 @@ const View = ({item}) => {
 const List = ({lists}) => {
     const itemList = lists.map(
         item => (
-            <View key={item.id} item={item} tittle={item.tittle} />
+            <View key={item.id} item={item} tittle={item.tittle} author={item.author}/>
         )
     )
     return itemList
