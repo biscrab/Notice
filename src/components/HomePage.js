@@ -8,8 +8,6 @@ import Axios from 'axios'
 const HomePage = () =>{
 
     let history = useHistory(); 
-
-    const [page, setPage] = useState(1);
     const [lists, setLists] = useState(
     [
         {
@@ -71,8 +69,26 @@ const HomePage = () =>{
             id: 12,
             tittle: 'tittle',
             author: 'author'
-        }
+        },
+        {
+            id: 13,
+            tittle: 'tittle',
+            author: 'author'
+        },
+        {
+            id: 14,
+            tittle: 'tittle',
+            author: 'author'
+        },
+        {
+            id: 15,
+            tittle: 'tittle',
+            author: 'author'
+        },
     ])
+
+    const [page, setPage] = useState(1);
+
     const [slists, setSlists] = useState([...lists]);
 
     const onWriting = () => {
@@ -85,24 +101,29 @@ const HomePage = () =>{
     }
 
     const nextList = () => {
-        if(page < Math.ceil(lists.length / 10)){
+        if(page < Math.ceil(lists.length / 14)){
             setPage(page + 1);
-            setList();
         }
     }
 
     const prevList = () => {
         if(page > 1){
             setPage(page - 1);
-            setList();
         }
     }
 
     const setList = () => {
-
+        const rlists = lists.reverse();
+        const list = rlists.slice((page-1)*10,(page-1)*10+9);
+        console.log(page);
+        setSlists(list);
     }
 
     //오류 있음
+
+    useEffect(()=>{
+        
+    })
 
     return( 
         <S.Post>
@@ -111,7 +132,7 @@ const HomePage = () =>{
                     <S.SmallTittle>게시판</S.SmallTittle> 
                     <S.Total>총 {lists.length}개의 글이 있습니다.</S.Total>                 
                 </S.HBorder>
-            <S.Bheader>
+                <S.Bheader>
                     <S.Category left="10px">번호</S.Category>
                     <S.Category left="280px">제목</S.Category>
                     <S.Category left="550px">작성자</S.Category>
@@ -123,9 +144,6 @@ const HomePage = () =>{
                 </S.Border>            
             <S.NextDiv>
                 <S.Button height="30px" width="70px" onClick={onWriting}>글쓰기</S.Button>
-                <S.Page>{page}/{Math.ceil(lists.length / 10)}</S.Page>
-                <S.Button width="30px" height="30px" left="590px" onClick={prevList}>◀</S.Button>
-                <S.Button width="30px" height="30px" left="590px" onClick={nextList}>▶</S.Button>
                 </S.NextDiv>   
             </div>
             <Login></Login>

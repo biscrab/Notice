@@ -115,7 +115,7 @@ const ViewPage = () => {
             <S.MiddleTittle>제목</S.MiddleTittle>
             <S.Text>
                 <div style={{height:"50px"}}></div>
-                <b style={{fontSize: "18px", margin: "10px"}}></b>             
+                <p style={{fontSize: "18px", margin: "10px"}}></p>             
             </S.Text>
             </div>
             <S.Chat>댓글</S.Chat>
@@ -126,9 +126,6 @@ const ViewPage = () => {
                 />
             </S.CommentsBorder>
             <S.TNextDiv>
-                <S.TPage>{page}/{Math.ceil(lists.length / 10)}</S.TPage>
-                <S.Button width="30px" height="30px" left="1300px" top="-30px" onClick={prevComment}>◀</S.Button>
-                <S.Button width="30px" height="30px" left="1300px" top="-30px" onClick={nextComment}>▶</S.Button>
             </S.TNextDiv>
             </div>
             <S.RegistCommentDiv>

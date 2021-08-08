@@ -27,6 +27,7 @@ export const Border = styled.ul`
     padding: 0px;
     list-style:none;
     margin-bottom: 0;
+    overflow-y: auto;
 `
 export const SmallTittle = styled.h3`
     position: absolute;
@@ -192,6 +193,7 @@ export const Text = styled.div`
     left: 50%;
     transform: translateX(-50%);
     border-top: 2px solid	#008080;
+    overflow-y: auto;
 `
 
 export const NextDiv = styled.div`
@@ -211,6 +213,7 @@ export const CommentsBorder = styled.ul`
     list-style:none;
     margin: 0;
     padding: 0;
+    overflow-y: auto;
 `
 
 export const Comment = styled.li`
