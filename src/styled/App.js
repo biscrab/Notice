@@ -12,19 +12,22 @@ export const Header = styled.div`
 
 export const Post = styled.div`
     position: relative;
-    left: 15%;
+    left: 50%;
+    transform:translateX(-50%);
     margin: 0px;
     margin-right: 0px;
     display: flex;
+    width: 900px;
     @media (max-width: 600px){
         left: 0%;
+        transform:translateX(0%);
         width: 100%;
     }
 `
 export const Border = styled.ul`
     margin-top: 0;
     position: relative;
-    width: 750px;
+    width: 900px;
     height: 712px;
     border-top:	#008080 solid 2px;
     border-bottom: #008080 solid 2px;
@@ -301,8 +304,8 @@ export const Number = styled.p`
 export const Bheader = styled.div`
     margin-top: 10px;
     border-top: 2px solid #008080;
-    width: 750px;
     height: 30px;
+    width: 900px;
     display: flex;
     align-content: center;
     background-color: whitesmoke;
