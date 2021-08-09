@@ -4,6 +4,7 @@ import '../styled/App.css'
 import * as P from '../pages'
 import Header from '../contents/Header'
 import * as S from '../styled/App'
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 
 function App() {
 
@@ -19,4 +20,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);

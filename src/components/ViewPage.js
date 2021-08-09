@@ -110,16 +110,13 @@ const ViewPage = () => {
     }
 
     return(
-        <div>
-            <div>
+        <S.VBorder>
             <S.MiddleTittle>제목</S.MiddleTittle>
             <S.Text>
                 <div style={{height:"50px"}}></div>
                 <p style={{fontSize: "18px", margin: "10px"}}></p>             
             </S.Text>
-            </div>
             <S.Chat>댓글</S.Chat>
-            <div>
             <S.CommentsBorder>
                 <Comments 
                     lists={slists}
@@ -127,12 +124,11 @@ const ViewPage = () => {
             </S.CommentsBorder>
             <S.TNextDiv>
             </S.TNextDiv>
-            </div>
             <S.RegistCommentDiv>
                 <S.RegistCommentTextArea />
                 <S.Button right="10px" top="62px">댓글 달기</S.Button>
             </S.RegistCommentDiv>
-        </div>
+        </S.VBorder>
     );
 }
 

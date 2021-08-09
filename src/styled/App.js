@@ -124,6 +124,9 @@ export const Writing = styled.div`
     width: 1100px;
     height: 700px;
     margin-bottom: 50px;
+    @media (max-width: 600px){
+        width: 100%;
+    }
 `
 export const WritingInput = styled.input`
     position: relative;
@@ -196,7 +199,6 @@ export const CheckInput = styled.input`
 export const MiddleTittle = styled.h1`
     color: #008080;
     position: relative;
-    left: 160px;
 `
 
 export const Text = styled.div`
@@ -277,8 +279,7 @@ export const RegistCommentTextArea = styled.textarea`
 `
 
 export const Chat = styled.h3`
-    position: relative;
-    left: 150px;
+    position: relative;;
     padding: 0;
     margin: 10px;
     color: #008080;
@@ -375,5 +376,16 @@ export const CAuthor = styled.p`
     left: 74%;
     @media (max-width: 600px){
         left: 62.5%;
+    }
+`
+
+export const VBorder = styled.div`
+    width: 1200px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    @media (max-width: 600px){
+        left: 0%;
+        width: 100%;
     }
 `
