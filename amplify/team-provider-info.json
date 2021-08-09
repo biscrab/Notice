@@ -10,6 +10,11 @@
       "StackName": "amplify-biscrab-dev-115514",
       "StackId": "arn:aws:cloudformation:ap-northeast-2:085167240014:stack/amplify-biscrab-dev-115514/3a792f60-f8bd-11eb-91b7-0611dfaf60ee",
       "AmplifyAppId": "d8z0w293s9mmw"
+    },
+    "categories": {
+      "auth": {
+        "biscrab3ab63692": {}
+      }
     }
   }
 }

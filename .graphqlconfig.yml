@@ -1,0 +1,12 @@
+projects:
+  biscrab:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - notice
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: javascript
+        generatedFileName: ''
+        docsFilePath: .

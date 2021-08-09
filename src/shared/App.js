@@ -1,10 +1,10 @@
 import React, { useState, useRef } from 'react'
 import {Route} from 'react-router-dom'
 import '../styled/App.css'
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import * as P from '../pages'
 import Header from '../contents/Header'
 import * as S from '../styled/App'
-import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 
 function App() {
 
@@ -16,6 +16,7 @@ function App() {
       <Route exact path='/SignUp' component={P.SignUp}/>
       <Route path='/View' component={P.View}/>
       <S.Footer></S.Footer>
+      <AmplifySignOut />
     </>
   );
 }
