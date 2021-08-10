@@ -91,6 +91,10 @@ const HomePage = () =>{
 
     const [slists, setSlists] = useState(lists.reverse());
 
+    useEffect(()=>{
+        setSlists(lists.reverse());
+    })
+
     const onWriting = () => {
         if(Login.login === false){
             alert("로그인을 해주세요");
