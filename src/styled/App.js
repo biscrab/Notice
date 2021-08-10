@@ -124,7 +124,7 @@ export const Writing = styled.div`
     justify-content: center;
     flex-direction:column;
     border: 2px solid gray;
-    width: 1100px;
+    width: 75%;
     height: 700px;
     margin-bottom: 50px;
     @media (max-width: 600px){
@@ -136,7 +136,7 @@ export const WritingInput = styled.input`
     left: 50%;
     transform: translateX(-50%); 
     font-size: large;
-    width: 900px;
+    width: 80%;
     height: 50px;
     border: 1px solid black;
 `
@@ -148,7 +148,7 @@ export const WritingTextArea = styled.textarea`
     left: 50%;
     transform: translateX(-50%); 
     resize: none;
-    width: 900px;
+    width: 80%;
     height: 500px;
 `
 export const Tittle = styled.h1`
@@ -232,6 +232,9 @@ export const CommentsBorder = styled.ul`
     margin: 0;
     padding: 0;
     overflow-y: auto;
+    @media (max-width: 600px){
+        width: 100%;
+    }
 `
 
 export const Comment = styled.li`
@@ -270,6 +273,9 @@ export const RegistCommentDiv = styled.div`
     border-bottom: 2px solid #008080;
     height: 300px;
     background-color: whitesmoke;
+    @media (max-width: 600px){
+        width: 100%;
+    }
 `
 export const RegistCommentTextArea = styled.textarea`
     resize: none;
@@ -298,7 +304,7 @@ export const Footer = styled.div`
 
 export const Number = styled.p`
     position: absolute;
-    left: 15px;
+    left: 20px;
 `
 
 export const Bheader = styled.div`
@@ -323,10 +329,10 @@ export const CNumber = styled.p`
 
 export const Author = styled.p`
     position: absolute;
-    left: 620px;
+    left: 740px;
 
     @media (max-width: 600px){
-        left: 80%;
+        left: 82.5%;
     }
 `
 
@@ -343,7 +349,7 @@ export const Total = styled.p`
 
 export const VTittle = styled.p`
     position: absolute;
-    left: 50px;
+    left: 55px;
 `
 
 export const HBorder = styled.div`
@@ -383,12 +389,42 @@ export const CAuthor = styled.p`
 `
 
 export const VBorder = styled.div`
-    width: 1200px;
+    width: 80%;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
     @media (max-width: 600px){
         left: 0%;
         width: 100%;
+        transform: translateX(0%);
+    }
+`
+
+export const RButton = styled.button`
+    position: relative;
+    right: 10px;
+    height: 40px;
+    top: 62px;
+    border: 0px;
+    background-color: #008080;
+    color: white;
+    @media (max-width: 600px){
+        left: 77%;
+        top: 11%;
+    }
+`
+
+export const WButton = styled.button`
+    position: relative;
+    height: 40px;
+    width: 100px ;
+    left: 81.5%;
+    top: 3%;
+    border: 0px;
+    background-color: #008080;
+    color: white;
+
+    @media (max-width: 600px){
+        left: 63%;
     }
 `

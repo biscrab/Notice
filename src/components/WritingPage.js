@@ -29,7 +29,7 @@ const WritingPage = () => {
             <S.Writing>
                 <S.WritingInput name="tittle" nameonChange={onChange} placeholder="제목을 입력해 주세요."></S.WritingInput>
                 <S.WritingTextArea name="contents" onChange={onChange} placeholder="내용을 입력해 주세요."></S.WritingTextArea>
-                <S.Button width="100px" left="904px" top="3%">등록</S.Button>
+                <S.WButton>등록</S.WButton>
             </S.Writing>
         </>
     )

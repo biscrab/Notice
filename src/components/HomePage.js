@@ -89,7 +89,7 @@ const HomePage = () =>{
 
     const [page, setPage] = useState(1);
 
-    const [slists, setSlists] = useState([...lists]);
+    const [slists, setSlists] = useState(lists.reverse());
 
     const onWriting = () => {
         if(Login.login === false){

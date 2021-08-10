@@ -126,7 +126,7 @@ const ViewPage = () => {
             </S.TNextDiv>
             <S.RegistCommentDiv>
                 <S.RegistCommentTextArea />
-                <S.Button right="10px" top="62px">댓글 달기</S.Button>
+                <S.RButton>댓글 달기</S.RButton>
             </S.RegistCommentDiv>
         </S.VBorder>
     );
