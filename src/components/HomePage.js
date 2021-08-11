@@ -87,8 +87,6 @@ const HomePage = () =>{
         },
     ])
 
-    const [page, setPage] = useState(1);
-
     const [slists, setSlists] = useState(lists.reverse());
 
     useEffect(()=>{
@@ -102,25 +100,6 @@ const HomePage = () =>{
         else{
             history.push('/Writing');
         }
-    }
-
-    const nextList = () => {
-        if(page < Math.ceil(lists.length / 14)){
-            setPage(page + 1);
-        }
-    }
-
-    const prevList = () => {
-        if(page > 1){
-            setPage(page - 1);
-        }
-    }
-
-    const setList = () => {
-        const rlists = lists.reverse();
-        const list = rlists.slice((page-1)*10,(page-1)*10+9);
-        console.log(page);
-        setSlists(list);
     }
 
     //오류 있음

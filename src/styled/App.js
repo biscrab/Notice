@@ -28,7 +28,7 @@ export const Border = styled.ul`
     margin-top: 0;
     position: relative;
     width: 900px;
-    height: 712px;
+    height: 710px;
     border-top:	#008080 solid 2px;
     border-bottom: #008080 solid 2px;
     background-color: white;
@@ -36,6 +36,10 @@ export const Border = styled.ul`
     list-style:none;
     margin-bottom: 0;
     overflow-y: auto;
+    &::-webkit-scrollbar-thumb{
+        background-color: #008080;
+        border-radius: 6px;
+    }
     @media (max-width: 600px){
         width: 100%;
     }
@@ -339,7 +343,7 @@ export const Author = styled.p`
 export const Total = styled.p`
     position: relative;
     color: #008080;
-    left: 75%;
+    left: 80%;
     margin: 0px;
     width: 190px;
     @media (max-width: 600px){
