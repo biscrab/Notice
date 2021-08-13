@@ -7,3 +7,14 @@ body, html {
     display: flex;
     flex-direction: column;
 }
+
+.border::-webkit-scrollbar-thumb{
+    background-color: #008080;
+    border-radius: 7px;
+}
+
+.border::-webkit-scrollbar{
+    background-color: rgba(255, 255, 255, 0);
+}
+
+

@@ -4,9 +4,12 @@ import * as S from '../styled/App'
 import Login from '../contents/Login'
 import View from '../contents/View'
 import Axios from 'axios'
+import '../styled/App.css'
+import Page from '../contents/Page'
 
 const HomePage = () =>{
-
+    
+    const [PageN, setPageN] = useState([]);
     let history = useHistory(); 
     const [lists, setLists] = useState(
     [
@@ -102,11 +105,17 @@ const HomePage = () =>{
         }
     }
 
-    //오류 있음
-
-    useEffect(()=>{
-        
-    })
+    const setPage = () => {
+        setPageN([]);
+        const num = Math.ceil(PageN.length/30);
+        //for(var i = 1; i <= num; i++){
+            //setPageN(...PageN, i);
+        //}
+        console.log(num);
+        setPageN(...PageN,'>>');
+    }
+    
+    console.log(1);
 
     return( 
         <>
@@ -121,13 +130,18 @@ const HomePage = () =>{
                     <S.CTittle>제목</S.CTittle>
                     <S.CAuthor>작성자</S.CAuthor>
                 </S.Bheader>
-                <S.Border>
+                <S.Border className="border">
                     <View
                         lists = {slists}
                     />
                 </S.Border>            
-            <S.NextDiv>
-                <S.Button height="30px" width="70px" onClick={onWriting}>글쓰기</S.Button>
+                <S.NextDiv>
+                    <ul>
+                        <Page 
+                            lists = {PageN}
+                        />
+                    </ul>
+                    <S.Button height="35px" width="80px" onClick={onWriting}>글쓰기</S.Button>
                 </S.NextDiv>   
             </S.TBorder>
         </S.Post>

@@ -8,7 +8,6 @@ const Header = () => {
 
     return(
         <>
-            <S.Tittle onClick={() => history.push('/')}>게시판</S.Tittle>
             <S.Header></S.Header>
         </>
     )

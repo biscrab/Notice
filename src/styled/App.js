@@ -18,6 +18,7 @@ export const Post = styled.div`
     margin-right: 0px;
     display: flex;
     width: 900px;
+    background-color:white;
     @media (max-width: 600px){
         left: 0%;
         transform:translateX(0%);
@@ -28,22 +29,17 @@ export const Border = styled.ul`
     margin-top: 0;
     position: relative;
     width: 900px;
-    height: 710px;
+    height: 1200px;
     border-top:	#008080 solid 2px;
-    border-bottom: #008080 solid 2px;
     background-color: white;
     padding: 0px;
     list-style:none;
     margin-bottom: 0;
-    overflow-y: auto;
-    &::-webkit-scrollbar-thumb{
-        background-color: #008080;
-        border-radius: 6px;
-    }
     @media (max-width: 600px){
         width: 100%;
     }
 `
+
 export const SmallTittle = styled.h3`
     position: absolute;
     padding: 0;
@@ -352,12 +348,12 @@ export const Total = styled.p`
 `
 
 export const VTittle = styled.p`
-    position: absolute;
-    left: 55px;
+    position: relative;
+    left: 11%;
 `
 
 export const HBorder = styled.div`
-    margin-top: 100px;
+    margin-top: 10px;
     @media (max-width: 600px){
         margin-top: 50px;
     }
@@ -365,6 +361,7 @@ export const HBorder = styled.div`
 `
 
 export const TBorder = styled.div`
+    margin-top: 100px;
     @media (max-width: 600px){
         width: 100%;
     }
@@ -375,7 +372,7 @@ export const CTittle = styled.p`
     height: 30px;
     margin: 0px;
     top: 5px;
-    left: 37%;
+    left: 7.5%;
     @media (max-width: 600px){
         left: 30%;
     }
@@ -431,4 +428,7 @@ export const WButton = styled.button`
     @media (max-width: 600px){
         left: 63%;
     }
+`
+export const PageButton = styled.li`
+    border: 1px solid black;
 `
