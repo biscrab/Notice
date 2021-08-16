@@ -6,10 +6,11 @@ import View from '../contents/View'
 import Axios from 'axios'
 import '../styled/App.css'
 import Page from '../contents/Page'
+import { relativeTimeRounding } from 'moment'
 
 const HomePage = () =>{
     
-    const [PageN, setPageN] = useState([]);
+    const [PageN, setPageN] = useState([1,2,3]);
     let history = useHistory(); 
     const [lists, setLists] = useState(
     [
@@ -106,16 +107,11 @@ const HomePage = () =>{
     }
 
     const setPage = () => {
-        setPageN([]);
         const num = Math.ceil(PageN.length/30);
-        //for(var i = 1; i <= num; i++){
-            //setPageN(...PageN, i);
-        //}
-        console.log(num);
-        setPageN(...PageN,'>>');
+        console.log(PageN);
     }
-    
-    console.log(1);
+
+    setPage();
 
     return( 
         <>
@@ -136,15 +132,24 @@ const HomePage = () =>{
                     />
                 </S.Border>            
                 <S.NextDiv>
-                    <ul>
-                        <Page 
-                            lists = {PageN}
-                        />
-                    </ul>
-                    <S.Button height="35px" width="80px" onClick={onWriting}>글쓰기</S.Button>
+                    <S.Button height="30px" width="80px" onClick={onWriting}>글쓰기</S.Button>
+                    <S.SBorder>
+                    <S.Select>
+                        <option>전체</option>
+                        <option>제목</option>
+                        <option>작성자</option>
+                    </S.Select>
+                    <S.Search></S.Search>
+                    <S.Button height="30px" width="80px">검색</S.Button>
+                    </S.SBorder>
                 </S.NextDiv>   
             </S.TBorder>
         </S.Post>
+        <S.PageDiv>
+            <S.PageButton>{'<'}</S.PageButton>
+            <S.PageButton>1</S.PageButton>
+            <S.PageButton>{'>'}</S.PageButton>
+        </S.PageDiv>
         </>
     )
 }

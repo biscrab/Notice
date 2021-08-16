@@ -17,7 +17,7 @@ export const Post = styled.div`
     margin: 0px;
     margin-right: 0px;
     display: flex;
-    width: 900px;
+    width: 1200px;
     background-color:white;
     @media (max-width: 600px){
         left: 0%;
@@ -28,7 +28,7 @@ export const Post = styled.div`
 export const Border = styled.ul`
     margin-top: 0;
     position: relative;
-    width: 900px;
+    width: 1200px;
     height: 1200px;
     border-top:	#008080 solid 2px;
     background-color: white;
@@ -311,7 +311,7 @@ export const Bheader = styled.div`
     margin-top: 10px;
     border-top: 2px solid #008080;
     height: 30px;
-    width: 900px;
+    width: 1200px;
     display: flex;
     align-content: center;
     background-color: whitesmoke;
@@ -329,7 +329,7 @@ export const CNumber = styled.p`
 
 export const Author = styled.p`
     position: absolute;
-    left: 740px;
+    left: 79.6%;
 
     @media (max-width: 600px){
         left: 82.5%;
@@ -349,7 +349,7 @@ export const Total = styled.p`
 
 export const VTittle = styled.p`
     position: relative;
-    left: 11%;
+    left: 10.3%;
 `
 
 export const HBorder = styled.div`
@@ -361,7 +361,7 @@ export const HBorder = styled.div`
 `
 
 export const TBorder = styled.div`
-    margin-top: 100px;
+    margin-top: 50px;
     @media (max-width: 600px){
         width: 100%;
     }
@@ -429,6 +429,35 @@ export const WButton = styled.button`
         left: 63%;
     }
 `
-export const PageButton = styled.li`
+export const PageButton = styled.button`
     border: 1px solid black;
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    margin: 5px;
+`
+
+export const Search = styled.input`
+    position: relative;
+    height: 24px;
+    width: 200px;
+`
+
+export const Select = styled.select`
+    background-color: #008080;
+    color: white;
+    position: relative;
+    height: 30px;
+    width: 70px;
+`
+
+export const SBorder = styled.div`
+    position: relative;
+    left: 63.5%;
+`
+export const PageDiv = styled.div`
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
 `
