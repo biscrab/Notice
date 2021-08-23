@@ -10,7 +10,6 @@ import { relativeTimeRounding } from 'moment'
 
 const HomePage = () =>{
     
-    const [PageN, setPageN] = useState([1,2,3]);
     let history = useHistory(); 
     const [lists, setLists] = useState(
     [
@@ -89,12 +88,61 @@ const HomePage = () =>{
             tittle: 'tittle',
             author: 'author'
         },
+        {
+            id: 16,
+            tittle: 'tittle',
+            author: 'author'
+        },
+        {
+            id: 17,
+            tittle: 'tittle',
+            author: 'author'
+        },
+        {
+            id: 18,
+            tittle: 'tittle',
+            author: 'author'
+        },
+        {
+            id: 19,
+            tittle: 'tittle',
+            author: 'author'
+        },
+        {
+            id: 20,
+            tittle: 'tittle',
+            author: 'author'
+        },
+        {
+            id: 21,
+            tittle: 'tittle',
+            author: 'author'
+        },
+        {
+            id: 22,
+            tittle: 'tittle',
+            author: 'author'
+        },
+        {
+            id: 23,
+            tittle: 'tittle',
+            author: 'author'
+        },
     ])
 
-    const [slists, setSlists] = useState(lists.reverse());
+    const [p, setP] = useState(Number(history.location.search.slice(2)));
+
+    const [pagen, setPagen] = useState([]);
+
+    const [plist, setPlist] = useState([]);
+    const [slists, setSlists] = useState([]);
 
     useEffect(()=>{
-        setSlists(lists.reverse());
+        setP(history.location.search.slice(2));
+
+        if(1 == 2){
+            history.push('/p?=1');
+        }
     })
 
     const onWriting = () => {
@@ -106,12 +154,60 @@ const HomePage = () =>{
         }
     }
 
+    const maxPage = 11;
+
     const setPage = () => {
-        const num = Math.ceil(PageN.length/30);
-        console.log(PageN);
+        var list = [];
+        for(var i = 1; i <= 12/*Math.ceil(lists.length/30)*/; i++){
+          list.push({id: i});
+        }
+
+        if(Number(p)-2 < 0){
+            if(Number(p)+3 > list.length){
+                setPlist(list.slice(0, list.length));
+                console.log('a');
+            }
+            else{
+                setPlist(list.slice(0, Number(p)+4));
+                console.log('b');
+            }
+        }
+        else{
+            if(Number(p)+3 > list.length){
+                setPlist(list.slice(Number(p)-3, list.length));
+                console.log('c');
+            }
+            else{
+                setPlist(list.slice(Number(p)-3, Number(p)+2));
+                console.log('d');
+            }
+        }
     }
 
-    setPage();
+    useEffect(() =>{
+        setSlists(lists.reverse());
+        setPage();
+    },[])
+
+    const prev = () => {
+        history.replace(`/p?=${Number(p)-3}`);
+        setPage();
+    }
+
+    const prevall = () => {
+        history.replace(`/p?=${1}`);
+        setPage();
+    }
+
+    const next = () => {
+        history.replace(`/p?=${Number(p)+3}`);
+        setPage();
+    }
+
+    const nextall = () => {
+        history.replace(`/p?=${maxPage}`);
+        setPage();
+    }
 
     return( 
         <>
@@ -132,24 +228,27 @@ const HomePage = () =>{
                     />
                 </S.Border>            
                 <S.NextDiv>
-                    <S.Button height="30px" width="80px" onClick={onWriting}>글쓰기</S.Button>
-                    <S.SBorder>
+                    <S.Button height="35px" width="80px" onClick={() => history.push('/Writing')}>글쓰기</S.Button>
+                    <S.Sbox>
                     <S.Select>
                         <option>전체</option>
                         <option>제목</option>
                         <option>작성자</option>
                     </S.Select>
                     <S.Search></S.Search>
-                    <S.Button height="30px" width="80px">검색</S.Button>
-                    </S.SBorder>
+                    <S.Button height="35px" width="80px" onClick={() => console.log(plist)}>검색</S.Button>
+                    </S.Sbox>
                 </S.NextDiv>   
             </S.TBorder>
         </S.Post>
-        <S.PageDiv>
-            <S.PageButton>{'<'}</S.PageButton>
-            <S.PageButton>1</S.PageButton>
-            <S.PageButton>{'>'}</S.PageButton>
-        </S.PageDiv>
+            <S.PageDiv>
+                {Number(p)-3 > 0 ? <S.PageButton onClick={()=>prevall()}>{'<<'}</S.PageButton> : <></> }
+                {Number(p)-3 > 0 ? <S.PageButton onClick={()=>prev()}>{'<'}</S.PageButton> : <></>}
+                <Page lists={plist}
+                />
+                {Number(p)+3 < maxPage ? <S.PageButton onClick={()=>next()}>{'>'}</S.PageButton> : <></>}
+                {Number(p)+3 < maxPage ? <S.PageButton onClick={()=>nextall()}>{'>>'}</S.PageButton> : <></>}
+            </S.PageDiv>
         </>
     )
 }

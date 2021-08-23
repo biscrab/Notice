@@ -8,7 +8,7 @@ const View = ({item}) => {
 
     return(
         <>
-            <S.box onClick={() => history.push("/View/"+item.id)}>
+            <S.box onClick={() => history.push(`/View/id?=${item.id}`)}>
                 <S.Number>{item.id}</S.Number><S.VTittle>{item.tittle}</S.VTittle><S.Author>{item.author}</S.Author>
             </S.box>
         </>

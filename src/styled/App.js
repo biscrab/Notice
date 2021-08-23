@@ -3,11 +3,12 @@ import styled from 'styled-components'
 export const Header = styled.div`
     position: relative;
     height: 50px;
-    background-color: #008080;
+    background-color: #4F86C6;
     color: white;
     border: 0px;
     margin: 0px;
     padding: 0px;
+    display: flex;
 `
 
 export const Post = styled.div`
@@ -30,7 +31,7 @@ export const Border = styled.ul`
     position: relative;
     width: 1200px;
     height: 1200px;
-    border-top:	#008080 solid 2px;
+    border-top:	#4F86C6 solid 2px;
     background-color: white;
     padding: 0px;
     list-style:none;
@@ -45,11 +46,11 @@ export const SmallTittle = styled.h3`
     padding: 0;
     margin: 0;
     width: 60px;
-    color: #008080;
+    color: #4F86C6;
 `
 export const Button = styled.button`
     border: 0px;
-    background-color: #008080;
+    background-color: #4F86C6;
     color: white;
     width: ${props => props.width};
     height: 40px;
@@ -64,7 +65,7 @@ export const Button = styled.button`
 export const LoginBorder = styled.div`
     width: 248px;
     height: 148px;
-    border: 3px solid #008080;
+    border: 3px solid #4F86C6;
     margin: 0px;
     top: 130px;
     left: 65%;
@@ -104,7 +105,7 @@ export const box = styled.li`
 export const MoveButton = styled.div`
     display:flex;
     justify-content: center;
-    background-color: #008080;
+    background-color: #4F86C6;
     color: white;
     width: 50px;
 `
@@ -143,7 +144,7 @@ export const WritingInput = styled.input`
 
 export const WritingTextArea = styled.textarea`
     margin-top: 20px;
-    font-size: 18px;
+    font-size: 15px;
     position: relative;
     left: 50%;
     transform: translateX(-50%); 
@@ -154,7 +155,7 @@ export const WritingTextArea = styled.textarea`
 export const Tittle = styled.h1`
     position: relative;
     left: 30px;
-    color: #008080;
+    color: #4F86C6;
 ` 
 
 export const SignUpBorder = styled.div`
@@ -199,9 +200,8 @@ export const CheckInput = styled.input`
     border: 1px solid black;
     margin: 0;
 `
-export const MiddleTittle = styled.h1`
-    color: #008080;
-    position: relative;
+export const MiddleTittle = styled.div`
+    border-bottom: 1px solid gray;
 `
 
 export const Text = styled.div`
@@ -210,8 +210,6 @@ export const Text = styled.div`
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    border-top: 2px solid	#008080;
-    overflow-y: auto;
 `
 
 export const NextDiv = styled.div`
@@ -224,14 +222,13 @@ export const CommentsBorder = styled.ul`
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    border-top: 2px solid #008080;
-    border-bottom: 2px solid #008080;
-    height: 544px;
+    border-top: 2px solid #4F86C6;
+    border-bottom: 2px solid #4F86C6;
+    height: 1200px;
     width: 1200px;
     list-style:none;
     margin: 0;
     padding: 0;
-    overflow-y: auto;
     @media (max-width: 600px){
         width: 100%;
     }
@@ -269,8 +266,8 @@ export const RegistCommentDiv = styled.div`
     left: 50%;
     transform: translateX(-50%);
     width: 1200px;
-    border-top: 2px solid #008080;
-    border-bottom: 2px solid #008080;
+    border-top: 2px solid #4F86C6;
+    border-bottom: 2px solid #4F86C6;
     height: 300px;
     background-color: whitesmoke;
     @media (max-width: 600px){
@@ -291,7 +288,7 @@ export const Chat = styled.h3`
     position: relative;;
     padding: 0;
     margin: 10px;
-    color: #008080;
+    color: #4F86C6;
 `
 
 export const TNextDiv = styled.div`
@@ -309,7 +306,7 @@ export const Number = styled.p`
 
 export const Bheader = styled.div`
     margin-top: 10px;
-    border-top: 2px solid #008080;
+    border-top: 2px solid #4F86C6;
     height: 30px;
     width: 1200px;
     display: flex;
@@ -338,8 +335,8 @@ export const Author = styled.p`
 
 export const Total = styled.p`
     position: relative;
-    color: #008080;
-    left: 80%;
+    color: #4F86C6;
+    left: 84%;
     margin: 0px;
     width: 190px;
     @media (max-width: 600px){
@@ -394,6 +391,7 @@ export const VBorder = styled.div`
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    margin-top: 80px;
     @media (max-width: 600px){
         left: 0%;
         width: 100%;
@@ -407,7 +405,7 @@ export const RButton = styled.button`
     height: 40px;
     top: 62px;
     border: 0px;
-    background-color: #008080;
+    background-color: #4F86C6;
     color: white;
     @media (max-width: 600px){
         left: 77%;
@@ -422,7 +420,7 @@ export const WButton = styled.button`
     left: 81.5%;
     top: 3%;
     border: 0px;
-    background-color: #008080;
+    background-color: #4F86C6;
     color: white;
 
     @media (max-width: 600px){
@@ -430,34 +428,96 @@ export const WButton = styled.button`
     }
 `
 export const PageButton = styled.button`
-    border: 1px solid black;
+    border: 1px solid ${props => props.border};
     width: 35px;
     height: 35px;
     background-color: white;
-    margin: 5px;
+    background-color: ${props => props.color};
+    margin: 3px;
 `
 
 export const Search = styled.input`
     position: relative;
-    height: 24px;
+    height: 31px;
     width: 200px;
+    border: 1px solid black;
 `
 
 export const Select = styled.select`
-    background-color: #008080;
+    background-color: #4F86C6;
     color: white;
     position: relative;
-    height: 30px;
+    height: 35px;
     width: 70px;
 `
 
-export const SBorder = styled.div`
-    position: relative;
-    left: 63.5%;
-`
 export const PageDiv = styled.div`
     position: relative;
     display: flex;
     justify-content: center;
     margin-top: 50px;
+`
+
+export const Home = styled.h2`
+    margin: 0;
+    position: relative;
+    top: 8px;
+    left: 10px;
+    height: 40px;
+`
+
+export const Info = styled.div`
+    position: relative;
+    display: flex;
+    flex-direction:row-reverse;
+    height: 30px;
+`
+
+export const T = styled.div`
+    margin: 0;
+    background-color: whitesmoke;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    display: flex;
+    height: 40px;
+`
+
+export const S = styled.span`
+    margin-right: 10px;
+`
+
+export const Sbox = styled.div`
+    position: relative;
+    left: 63.7%;
+    @media (max-width: 600px){
+        top: 35px;
+        left: -19%;
+    }
+`
+
+export const Like = styled.div`
+    height: 70px;
+    width: 100px;
+    border: 1px solid black;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+`
+
+export const LikeDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 75%;
+`
+
+export const IL =  styled.span`
+    height: 0;
+`
+
+export const NL = styled.h3`
+    margin: 0;
+    position: absolute;
+    top: 35px;
+    height: 0;
 `

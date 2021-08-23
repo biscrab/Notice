@@ -8,7 +8,11 @@ const Header = () => {
 
     return(
         <>
-            <S.Header></S.Header>
+            <S.Header>
+                <S.Home onClick={() => history.push("/p?=1")}>
+                    게시판
+                </S.Home>
+            </S.Header>
         </>
     )
 }

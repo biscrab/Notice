@@ -2,10 +2,38 @@ import React,{useState, useRef, useLayoutEffect} from 'react'
 import * as S from '../styled/App'
 import Comments from '../contents/Comments'
 import Axios from 'axios'
+import '../styled/App.css'
 
 const ViewPage = () => {
 
     const [page, setPage] = useState(1);
+
+    const [view , setView] = useState([
+        {
+            id: 1,
+            tittle: 1,
+            like: 1,
+            unlike: 1,
+            content: '1',
+            author: '1',
+        },
+        {
+            id: 2,
+            tittle: 2,
+            like: 2,
+            unlike: 2,
+            content: '1',
+            author: '1',
+        },
+        {
+            id: 3,
+            tittle: 2,
+            like: 2,
+            unlike: 2,
+            content: '1',
+            author: '1',
+        },
+    ])
 
     //전체 댓글
     const [lists, setlists] = useState([
@@ -111,10 +139,26 @@ const ViewPage = () => {
 
     return(
         <S.VBorder>
-            <S.MiddleTittle>제목</S.MiddleTittle>
             <S.Text>
-                <div style={{height:"50px"}}></div>
-                <p style={{fontSize: "18px", margin: "10px"}}></p>             
+                <p style={{fontSize: "18px", margin: "10px"}}></p>  
+                <S.MiddleTittle>
+                <S.T>게시판</S.T>
+                <S.Info>
+                    <S.S>댓글{slists.length}</S.S>
+                    <S.S>조회</S.S>
+                    <S.S>추천</S.S> 
+                </S.Info>
+                </S.MiddleTittle>
+                <S.LikeDiv>                
+                    <S.Like>
+                    <S.IL>추천</S.IL>
+                    <S.NL>2</S.NL>
+                    </S.Like>
+                    <S.Like>
+                    <S.IL>비추천</S.IL>
+                    <S.NL>1</S.NL>
+                    </S.Like> 
+                </S.LikeDiv> 
             </S.Text>
             <S.Chat>댓글</S.Chat>
             <S.CommentsBorder>
